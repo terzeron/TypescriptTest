@@ -2,7 +2,8 @@
     "files": [
         "src/main.ts",
         "src/greet.ts",
-        "src/test1.ts"
+        "src/basic_types.ts",
+        "src/variable_declaration.ts"
     ],
     "compilerOptions": {
         "noImplicitAny": true,

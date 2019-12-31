@@ -45,7 +45,7 @@ function bundle() {
 };
 
 gulp.task("transpile", function() {
-    return gulp.src('src/**/*.ts')
+    return gulp.src('src/*.ts')
         .pipe(tsProject())
         .pipe(gulp.dest('dist'));
 });
