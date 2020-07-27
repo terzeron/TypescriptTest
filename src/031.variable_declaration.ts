@@ -330,19 +330,21 @@ function test2_15() {
     console.log("bothPlus=" + bothPlus);
 
     let defaults = {food: "spicy", price: "$$", ambiance: "noisy"};
-    let search = { ...defaults, food: "rich"};
+    let search = {...defaults, food: "rich"};
     console.log("search=");
     console.log(search);
 
     class C {
         p = 12;
+
         m() {
 
         }
     }
+
     let c = new C();
-    let clone = { ...c };
-    clone.p;
+    let clone = {...c};
+    console.log(clone.p);
     //clone.m(); // error
 }
 
@@ -354,25 +356,34 @@ console.log("\n------ test2_3() ------");
 test2_3();
 console.log("\n------ test2_4() ------");
 test2_4();
-console.log("\n------ test2_6() ------");
-test2_6();
-console.log("\n------ test2_7() ------");
-test2_7();
-console.log("\n------ test2_8() ------");
-test2_8();
-console.log("\n------ test2_9() ------");
-test2_9();
-console.log("\n------ test2_10() ------");
-test2_10();
-console.log("\n------ test2_11() ------");
-test2_11();
-console.log("\n------ test2_12() ------");
-test2_12();
-console.log("\n------ test2_13() ------");
-test2_13();
-console.log("\n------ test2_14() ------");
-test2_14();
-console.log("\n------ test2_15() ------");
-test2_15();
 console.log("\n------ test2_5() ------");
 test2_5();
+
+function delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+(async () => {
+    await delay(1000);
+
+    console.log("\n------ test2_6() ------");
+    test2_6();
+    console.log("\n------ test2_7() ------");
+    test2_7();
+    console.log("\n------ test2_8() ------");
+    test2_8();
+    console.log("\n------ test2_9() ------");
+    test2_9();
+    console.log("\n------ test2_10() ------");
+    test2_10();
+    console.log("\n------ test2_11() ------");
+    test2_11();
+    console.log("\n------ test2_12() ------");
+    test2_12();
+    console.log("\n------ test2_13() ------");
+    test2_13();
+    console.log("\n------ test2_14() ------");
+    test2_14();
+    console.log("\n------ test2_15() ------");
+    test2_15();
+})();
