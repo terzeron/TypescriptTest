@@ -1,4 +1,4 @@
-export function test1_1() {
+function test1_1() {
     let isDone: boolean = false;
     let decimal: number = 6;
     let hex: number = 0xf00d;
@@ -39,7 +39,7 @@ export function test1_1() {
     //x[6] = true;
 }
 
-export function test1_2() {
+function test1_2() {
     enum Color { Red, Green, Blue};
     let c: Color = Color.Green;
     console.log(c);
@@ -83,14 +83,16 @@ function infiniteLoop(): never {
     }
 }
 
-export function test1_3() {
+function test1_3() {
     let someValue: any = "this is a string";
     let strLength: number = (<string>someValue).length;
     console.log(someValue);
     console.log(strLength);
 }
 
-
+console.log("\n------ test1_1() ------");
 test1_1();
+console.log("\n------ test1_2() ------");
 test1_2();
+console.log("\n------ test1_3() ------");
 test1_3();

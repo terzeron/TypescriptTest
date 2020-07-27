@@ -1,4 +1,4 @@
-export function test2_1() {
+function test2_1() {
     function f() {
         var a = 10;
         return function g() {
@@ -12,7 +12,7 @@ export function test2_1() {
     console.log("g()=" + g());
 }
 
-export function test2_2() {
+function test2_2() {
     function f2() {
         var a = 1;
         a = 2;
@@ -32,7 +32,7 @@ export function test2_2() {
     console.log("f2()=" + f2());
 }
 
-export function test2_3() {
+function test2_3() {
     function f(shouldInitialize: boolean) {
         if (shouldInitialize) {
             var x = 10;
@@ -46,7 +46,7 @@ export function test2_3() {
     console.log("f(false)=" + f(false));
 }
 
-export function test2_4() {
+function test2_4() {
     function sumMatrix(matrix: number[][]) {
         var sum = 0;
 
@@ -66,7 +66,7 @@ export function test2_4() {
     console.log("sumMatrix(matrix)=" + sumMatrix(matrix));
 }
 
-export function test2_5() {
+function test2_5() {
     for (var i = 0; i < 5; i++) {
         // setTimeout의 callback은 for loop이 끝난 다음에 실행되므로 i는 항상 5
         setTimeout(function () {
@@ -90,7 +90,7 @@ export function test2_5() {
     }
 }
 
-export function test2_6() {
+function test2_6() {
     function f(input: boolean) {
         let a = 100;
 
@@ -108,7 +108,7 @@ export function test2_6() {
     console.log("f(false)=" + f(false));
 }
 
-export function test2_7() {
+function test2_7() {
     function foo() {
         return a;
     }
@@ -122,7 +122,7 @@ export function test2_7() {
     foo();
 }
 
-export function test2_8() {
+function test2_8() {
     function f(x: number) {
         // var로 변수를 선언하면 얼마든지 재선언할 수 있음
         var x: number;
@@ -156,7 +156,7 @@ export function test2_8() {
     console.log("i(false, 8)=" + i(false, 8));
 }
 
-export function test2_9() {
+function test2_9() {
     function sumMatrix(matrix: number[][]) {
         var sum = 0;
 
@@ -175,7 +175,7 @@ export function test2_9() {
     console.log("sumMatrix(matrix)=" + sumMatrix(matrix));
 }
 
-export function test2_10() {
+function test2_10() {
     function theCityThatAlwaysSleeps() {
         let getCity;
 
@@ -192,7 +192,7 @@ export function test2_10() {
     console.log("theCityThatSleeps()=" + theCityThatAlwaysSleeps());
 }
 
-export function test2_11() {
+function test2_11() {
     // const 선언
     const numLivesForCat = 9;
     const kitty = {
@@ -206,7 +206,7 @@ export function test2_11() {
     console.log(kitty);
 }
 
-export function test2_12() {
+function test2_12() {
     // 튜플 분해
     let input = [1, 2];
     let [first, second] = input;
@@ -287,13 +287,63 @@ export function test2_12() {
     j();
 }
 
-export function test2_13() {
+function test2_13() {
     // optional 처리 
     function keepWholeObject(wholeObject: { a: string, b?: number }) {
         let {a, b = 1001} = wholeObject; // b에 default value 지정
         console.log("a=" + a + " b=" + b);
     }
-    keepWholeObject({a: "hello" });
+
+    keepWholeObject({a: "hello"});
+}
+
+function test2_14() {
+    // function declaration
+    type C = { a: String, b?: number }
+
+    function f({a, b}: C): void {
+
+    }
+
+    let c: C = {a: "hello", b: 3}
+    f(c);
+
+    // 함수 파라미터는 default value를 지정하는 게 바람직함
+    function g({a = "", b = 0} = {}): void {
+
+    }
+
+    g();
+
+    function h({a, b = 0} = {a: ""}): void {
+
+    }
+
+    h();
+}
+
+function test2_15() {
+    // spread
+    let first = [1, 2];
+    let second = [3, 4];
+    let bothPlus = [0, ...first, ...second, 5]; // spread (shallow copy)
+    console.log("bothPlus=" + bothPlus);
+
+    let defaults = {food: "spicy", price: "$$", ambiance: "noisy"};
+    let search = { ...defaults, food: "rich"};
+    console.log("search=");
+    console.log(search);
+
+    class C {
+        p = 12;
+        m() {
+
+        }
+    }
+    let c = new C();
+    let clone = { ...c };
+    clone.p;
+    //clone.m(); // error
 }
 
 console.log("\n------ test2_1() ------");
@@ -320,5 +370,9 @@ console.log("\n------ test2_12() ------");
 test2_12();
 console.log("\n------ test2_13() ------");
 test2_13();
+console.log("\n------ test2_14() ------");
+test2_14();
+console.log("\n------ test2_15() ------");
+test2_15();
 console.log("\n------ test2_5() ------");
 test2_5();
