@@ -1,4 +1,4 @@
-function test2_1() {
+function test31_1() {
     function f() {
         var a = 10;
         return function g() {
@@ -12,7 +12,7 @@ function test2_1() {
     console.log("g()=" + g());
 }
 
-function test2_2() {
+function test31_2() {
     function f2() {
         var a = 1;
         a = 2;
@@ -32,7 +32,7 @@ function test2_2() {
     console.log("f2()=" + f2());
 }
 
-function test2_3() {
+function test31_3() {
     function f(shouldInitialize: boolean) {
         if (shouldInitialize) {
             var x = 10;
@@ -46,7 +46,7 @@ function test2_3() {
     console.log("f(false)=" + f(false));
 }
 
-function test2_4() {
+function test31_4() {
     function sumMatrix(matrix: number[][]) {
         var sum = 0;
 
@@ -66,7 +66,7 @@ function test2_4() {
     console.log("sumMatrix(matrix)=" + sumMatrix(matrix));
 }
 
-function test2_5() {
+function test31_5() {
     for (var i = 0; i < 5; i++) {
         // setTimeout의 callback은 for loop이 끝난 다음에 실행되므로 i는 항상 5
         setTimeout(function () {
@@ -90,7 +90,7 @@ function test2_5() {
     }
 }
 
-function test2_6() {
+function test31_6() {
     function f(input: boolean) {
         let a = 100;
 
@@ -108,7 +108,7 @@ function test2_6() {
     console.log("f(false)=" + f(false));
 }
 
-function test2_7() {
+function test31_7() {
     function foo() {
         return a;
     }
@@ -122,7 +122,7 @@ function test2_7() {
     foo();
 }
 
-function test2_8() {
+function test31_8() {
     function f(x: number) {
         // var로 변수를 선언하면 얼마든지 재선언할 수 있음
         var x: number;
@@ -156,7 +156,7 @@ function test2_8() {
     console.log("i(false, 8)=" + i(false, 8));
 }
 
-function test2_9() {
+function test31_9() {
     function sumMatrix(matrix: number[][]) {
         var sum = 0;
 
@@ -175,7 +175,7 @@ function test2_9() {
     console.log("sumMatrix(matrix)=" + sumMatrix(matrix));
 }
 
-function test2_10() {
+function test31_10() {
     function theCityThatAlwaysSleeps() {
         let getCity;
 
@@ -192,7 +192,7 @@ function test2_10() {
     console.log("theCityThatSleeps()=" + theCityThatAlwaysSleeps());
 }
 
-function test2_11() {
+function test31_11() {
     // const 선언
     const numLivesForCat = 9;
     const kitty = {
@@ -206,7 +206,7 @@ function test2_11() {
     console.log(kitty);
 }
 
-function test2_12() {
+function test31_12() {
     // 튜플 분해
     let input = [1, 2];
     let [first, second] = input;
@@ -287,7 +287,7 @@ function test2_12() {
     j();
 }
 
-function test2_13() {
+function test31_13() {
     // optional 처리 
     function keepWholeObject(wholeObject: { a: string, b?: number }) {
         let {a, b = 1001} = wholeObject; // b에 default value 지정
@@ -297,7 +297,7 @@ function test2_13() {
     keepWholeObject({a: "hello"});
 }
 
-function test2_14() {
+function test31_14() {
     // function declaration
     type C = { a: String, b?: number }
 
@@ -322,7 +322,7 @@ function test2_14() {
     h();
 }
 
-function test2_15() {
+function test31_15() {
     // spread
     let first = [1, 2];
     let second = [3, 4];
@@ -348,16 +348,16 @@ function test2_15() {
     //clone.m(); // error
 }
 
-console.log("\n------ test2_1() ------");
-test2_1();
-console.log("\n------ test2_2() ------");
-test2_2();
-console.log("\n------ test2_3() ------");
-test2_3();
-console.log("\n------ test2_4() ------");
-test2_4();
-console.log("\n------ test2_5() ------");
-test2_5();
+console.log("\n------ test31_1() ------");
+test31_1();
+console.log("\n------ test31_2() ------");
+test31_2();
+console.log("\n------ test31_3() ------");
+test31_3();
+console.log("\n------ test31_4() ------");
+test31_4();
+console.log("\n------ test31_5() ------");
+test31_5();
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -366,24 +366,24 @@ function delay(ms: number) {
 (async () => {
     await delay(1000);
 
-    console.log("\n------ test2_6() ------");
-    test2_6();
-    console.log("\n------ test2_7() ------");
-    test2_7();
-    console.log("\n------ test2_8() ------");
-    test2_8();
-    console.log("\n------ test2_9() ------");
-    test2_9();
-    console.log("\n------ test2_10() ------");
-    test2_10();
-    console.log("\n------ test2_11() ------");
-    test2_11();
-    console.log("\n------ test2_12() ------");
-    test2_12();
-    console.log("\n------ test2_13() ------");
-    test2_13();
-    console.log("\n------ test2_14() ------");
-    test2_14();
-    console.log("\n------ test2_15() ------");
-    test2_15();
+    console.log("\n------ test31_6() ------");
+    test31_6();
+    console.log("\n------ test31_7() ------");
+    test31_7();
+    console.log("\n------ test31_8() ------");
+    test31_8();
+    console.log("\n------ test31_9() ------");
+    test31_9();
+    console.log("\n------ test31_10() ------");
+    test31_10();
+    console.log("\n------ test31_11() ------");
+    test31_11();
+    console.log("\n------ test31_12() ------");
+    test31_12();
+    console.log("\n------ test31_13() ------");
+    test31_13();
+    console.log("\n------ test31_14() ------");
+    test31_14();
+    console.log("\n------ test31_15() ------");
+    test31_15();
 })();
