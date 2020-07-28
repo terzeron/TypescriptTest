@@ -331,9 +331,8 @@ function test31_15() {
 
     let defaults = {food: "spicy", price: "$$", ambiance: "noisy"};
     let search = {...defaults, food: "rich"};
-    console.log("search=");
-    console.log(search);
-
+    console.log("search=", search);
+    
     class C {
         p = 12;
 
