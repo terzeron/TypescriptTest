@@ -1,12 +1,17 @@
 {
-    "files": [
-        "src/main.ts",
-        "src/greet.ts",
-        "src/007.basic_types.ts",
-      "src/031.variable_declaration.ts"
-    ],
-    "compilerOptions": {
-        "noImplicitAny": true,
-        "target": "es2015"
-    }
+  "files": [
+    "src/main.ts",
+    "src/greet.ts",
+    "src/007.basic_types.ts",
+    "src/031.variable_declaration.ts"
+  ],
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "es2015",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "types": [
+      "reflect-metadata"
+    ]
+  }
 }
