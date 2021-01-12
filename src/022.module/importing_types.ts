@@ -1,0 +1,1 @@
+import type { APIResponse } from './api';
